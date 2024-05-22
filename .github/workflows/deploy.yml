@@ -1,4 +1,4 @@
-name: Build and publish and deploy docker image to Azure
+name: Deployment
 
 on:
   # In order to use this workflow, replace `<application name>` with name of your app and add secrets
