@@ -1,6 +1,7 @@
 name: Build and publish and deploy docker image to Azure
 
 on:
+  # In order to use this workflow, replace `<application name>` with name of your app and add secrets
   workflow_dispatch:
   # push:
   #   branches: ['main']
@@ -25,8 +26,8 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
-          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/eapp:${{ github.sha }}
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/eapp:${{ github.sha }}
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/<application name>:${{ github.sha }}
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/<application name>:${{ github.sha }}
 
   deploy:
     needs: build-and-push
@@ -45,9 +46,9 @@ jobs:
         with:
           resource-group: ${{ secrets.RESOURCE_GROUP }}
           dns-name-label: ${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}
-          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/eapp:${{ github.sha }}
+          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/<application name>:${{ github.sha }}
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          name: eapp
+          name: <application name>
           location: 'westeurope'
