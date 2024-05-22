@@ -1,6 +1,10 @@
 ## Description
 
-Template for starting new backend service
+Template project for starting new backend service with default Github actions workflows.
+
+## Setup
+
+Some of the workflows are set to run on `workflow_dispatch` so they don't run and fail as they might require to set correct URLs or secrets.
 
 ## Installation
 
