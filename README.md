@@ -4,7 +4,7 @@ Template project for starting new backend service with default Github actions wo
 
 ## Setup
 
-Some of the workflows are set to run on `workflow_dispatch` so they don't run and fail as they might require to set correct URLs or secrets. Github Actions are also disabled as default need to be enabled.
+Some of the workflows are set to run on `workflow_dispatch` so they don't run and fail as they might require to set correct URLs or secrets. Github Actions are also disabled as default and needs to be enabled.
 
 ## Installation
 
