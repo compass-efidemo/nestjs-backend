@@ -2,11 +2,11 @@ name: Build and publish docker image to Azure
 
 on:
   # In order to use this workflow, replace `<application name>` with name of your app and add secrets
-  #workflow_dispatch:
-  workflow_run:
-    workflows: ['Build project', 'Run unit tests']
-    types:
-      - completed
+  workflow_dispatch:
+  # workflow_run:
+  #   workflows: ['Build project', 'Run unit tests']
+  #   types:
+  #     - completed
 
 jobs:
   build-and-push:
