@@ -1,10 +1,10 @@
 name: Generate Swagger JSON
 
 on:
-  workflow_dispatch: # If you want to create Swagger docs, replace this line with commented out code below.
-  #  push:
-  #    branches:
-  #      - main
+  # workflow_dispatch: # If you want to create Swagger docs, replace this line with commented out code below.
+  push:
+    branches:
+      - main
 
 jobs:
   build:
