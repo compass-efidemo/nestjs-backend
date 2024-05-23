@@ -16,7 +16,7 @@ async function generateSwagger() {
 
   // Write the Swagger JSON to a file in the dist folder
   writeFileSync(
-    join(process.cwd(), 'dist', 'swagger.json'),
+    join(process.cwd(), 'swagger', 'swagger.json'),
     JSON.stringify(document, null, 2),
   );
 
