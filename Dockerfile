@@ -15,6 +15,8 @@ RUN apk add --no-cache --virtual .build-deps alpine-sdk python3 \
 # Step 5: Copy the rest of the application code
 COPY . .
 
+ENV PORT=80
+
 # Step 6: Build the application
 RUN yarn build
 
